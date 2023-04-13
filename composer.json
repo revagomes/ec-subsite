@@ -7,19 +7,18 @@
     "prefer-stable": true,
     "require": {
         "php": ">=8.1",
-        "composer/installers": "^2.0",
-        "cweagans/composer-patches": "^1.6",
-        "drupal/core": "^10.0.0-alpha7",
-        "drupal/core-composer-scaffold": "^10.0.0-alpha7",
-        "drush/drush": "^10.0 | ^11.0",
-        "webflo/drupal-finder": "^1.0",
-        "webmozart/path-util": "^2.3",
-        "consolidation/robo": "^4.0.0-alpha1"
+        "composer/installers": "^2.2",
+        "cweagans/composer-patches": "^1.7",
+        "drupal/core": "^9",
+        "drupal/core-composer-scaffold": "^9",
+        "drush/drush": "^10 | ^11"
     },
     "require-dev": {
-        "drupal/core-dev": "^10.0.0-alpha7",
-        "drupal/drupal-driver": "^2.1.1",
-        "ec-europa/toolkit": "dev-feature/DQA-4441"
+        "behat/mink-goutte-driver": "^1.0 || ^2.0",
+        "drupal/core-dev": "^9",
+        "drupal/drupal-driver": "^2.2.0",
+        "drupal/drupal-extension": "~4.0 || ^5",
+        "ec-europa/toolkit": "^9.2"
     },
     "scripts": {
         "post-root-package-install": [
@@ -36,22 +35,14 @@
         },
         {
             "type": "vcs",
-            "url": "https://github.com/ec-europa/task-runner"
+            "url": "https://github.com/openeuropa/oe_dashboard_agent"
         },
         {
-            "type": "vcs",
-            "url": "https://github.com/ec-europa/robo-config"
+            "type": "path",
+            "url": "lib/*/*"
         }
     ],
     "extra": {
-        "artifacts": {
-            "openeuropa/oe_theme": {
-                "dist": {
-                    "url": "https://github.com/{name}/releases/download/{pretty-version}/{project-name}-{pretty-version}.tar.gz",
-                    "type": "tar"
-                }
-            }
-        },
         "drupal-scaffold": {
             "allowed-packages": [
                 "drupal/core"
@@ -109,7 +100,6 @@
             "drupal/core-composer-scaffold": true,
             "cweagans/composer-patches": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,
-            "phpro/grumphp": true,
             "phpstan/extension-installer": true
         }
     }
